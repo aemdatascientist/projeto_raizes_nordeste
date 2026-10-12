@@ -1,0 +1,6 @@
+# Dependências dos testes (instaladas com npm)
+node_modules/
+
+# Apenas arquivos para testes estão subindo, itens complementares permanecem locais
+documentacao/*
+!documentacao/evidencias/

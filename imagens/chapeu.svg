@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70">
+    <!-- Chapéu de couro: aba, copa em meia-lua, faixa e três estrelas -->
+    <path d="M2 54 Q60 74 118 54 Q60 64 2 54Z" fill="#4a2414"/>
+    <path d="M12 54 Q60 -14 108 54 Q60 42 12 54Z" fill="#c46a3a" stroke="#4a2414" stroke-width="3"/>
+    <path d="M20 47 Q60 33 100 47" fill="none" stroke="#f2b632" stroke-width="3"/>
+    <g fill="#fff3df">
+        <polygon transform="translate(38 33)" points="0,-7 1.6,-2.2 6.7,-2.2 2.6,0.8 4.1,5.7 0,2.7 -4.1,5.7 -2.6,0.8 -6.7,-2.2 -1.6,-2.2"/>
+        <polygon transform="translate(60 22) scale(1.3)" points="0,-7 1.6,-2.2 6.7,-2.2 2.6,0.8 4.1,5.7 0,2.7 -4.1,5.7 -2.6,0.8 -6.7,-2.2 -1.6,-2.2"/>
+        <polygon transform="translate(82 33)" points="0,-7 1.6,-2.2 6.7,-2.2 2.6,0.8 4.1,5.7 0,2.7 -4.1,5.7 -2.6,0.8 -6.7,-2.2 -1.6,-2.2"/>
+    </g>
+</svg>

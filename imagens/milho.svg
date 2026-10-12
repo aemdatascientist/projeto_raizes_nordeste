@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+    <!-- Espiga de milho com grãos e palha -->
+    <ellipse cx="24" cy="21" rx="8" ry="17" fill="#f2b632" stroke="#4a2414" stroke-width="1.5"/>
+    <g stroke="#c98a12" stroke-width="1.2">
+        <path d="M17 12h14M16 17h16M16 22h16M16 27h16M17 32h14M24 5v32M20 6v30M28 6v30"/>
+    </g>
+    <path d="M24 46C10 38 8 22 13 12C16 26 20 34 24 46Z" fill="#2f6b3a" stroke="#1d4426" stroke-width="1.2"/>
+    <path d="M24 46C38 38 40 22 35 12C32 26 28 34 24 46Z" fill="#3f8a4c" stroke="#1d4426" stroke-width="1.2"/>
+</svg>

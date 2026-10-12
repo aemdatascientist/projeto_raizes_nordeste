@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+    <!-- Tigela de canjica com canela polvilhada -->
+    <ellipse cx="24" cy="20" rx="19" ry="5" fill="#fbe9b7" stroke="#4a2414" stroke-width="1.5"/>
+    <path d="M5 20Q6 40 24 40Q42 40 43 20Q24 26 5 20Z" fill="#fff3df" stroke="#4a2414" stroke-width="1.5"/>
+    <path d="M10 28Q24 32 38 28" fill="none" stroke="#2f6b3a" stroke-width="2.5"/>
+    <g fill="#8a4a1c">
+        <circle cx="16" cy="19" r="1.2"/><circle cx="22" cy="21" r="1.1"/><circle cx="28" cy="18" r="1.2"/><circle cx="33" cy="20" r="1.1"/><circle cx="20" cy="17" r="0.9"/>
+    </g>
+    <path d="M30 17l9-12" stroke="#c46a3a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

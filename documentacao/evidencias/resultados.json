@@ -1,0 +1,172 @@
+{
+  "data": "2026-10-12",
+  "ambiente": "Chrome local / Windows",
+  "testes": [
+    {
+      "id": "T01",
+      "nome": "Cardápio diferente por unidade",
+      "ok": true
+    },
+    {
+      "id": "T02",
+      "nome": "Unidade fechada bloqueia pedidos",
+      "ok": true
+    },
+    {
+      "id": "T03",
+      "nome": "Produto sazonal fora da temporada",
+      "ok": true
+    },
+    {
+      "id": "T04",
+      "nome": "Montar pedido e calcular subtotal",
+      "ok": true
+    },
+    {
+      "id": "T05",
+      "nome": "Limite de estoque no carrinho",
+      "ok": true
+    },
+    {
+      "id": "T06",
+      "nome": "Cupom válido da unidade",
+      "ok": true
+    },
+    {
+      "id": "T07",
+      "nome": "Cupom vencido, de outra unidade e inválido",
+      "ok": true
+    },
+    {
+      "id": "T08",
+      "nome": "Cadastro com aceite e campanhas desmarcadas",
+      "ok": true
+    },
+    {
+      "id": "T09",
+      "nome": "Cadastro com senha curta ou sem aceite",
+      "ok": true
+    },
+    {
+      "id": "T10",
+      "nome": "Login com senha incorreta",
+      "ok": true
+    },
+    {
+      "id": "T11",
+      "nome": "Pagamento aprovado confirma o pedido",
+      "ok": true
+    },
+    {
+      "id": "T12",
+      "nome": "Pagamento recusado e provedor indisponível",
+      "ok": true
+    },
+    {
+      "id": "T13",
+      "nome": "Envio duplicado e alterações durante a espera",
+      "ok": true
+    },
+    {
+      "id": "T14",
+      "nome": "Preparo e retirada conforme o papel",
+      "ok": true
+    },
+    {
+      "id": "T15",
+      "nome": "Pontos e resgate de recompensa",
+      "ok": true
+    },
+    {
+      "id": "T16",
+      "nome": "Cancelamento com estorno simulado",
+      "ok": true
+    },
+    {
+      "id": "T17",
+      "nome": "Exportação e exclusão dos dados",
+      "ok": true
+    },
+    {
+      "id": "T18",
+      "nome": "Ajuste de estoque e vendas consolidadas",
+      "ok": true
+    },
+    {
+      "id": "T19",
+      "nome": "Layout em celular, tablet e desktop",
+      "ok": true
+    },
+    {
+      "id": "T20",
+      "nome": "Totem limpa a sessão após inatividade",
+      "ok": true
+    },
+    {
+      "id": "T21",
+      "nome": "Navegação por teclado e rótulos",
+      "ok": true
+    },
+    {
+      "id": "T22",
+      "nome": "Observação com HTML exibida como texto",
+      "ok": true
+    },
+    {
+      "id": "T23",
+      "nome": "Troca de unidade com carrinho cheio",
+      "ok": true
+    },
+    {
+      "id": "T24",
+      "nome": "Estoque alterado durante a espera do provedor",
+      "ok": true
+    },
+    {
+      "id": "T25",
+      "nome": "Movimento da loja e previsão de retirada",
+      "ok": true
+    },
+    {
+      "id": "T26",
+      "nome": "Cupom personalizado sem autorização",
+      "ok": true
+    },
+    {
+      "id": "T27",
+      "nome": "Campanha personalizada com autorização e revogação",
+      "ok": true
+    },
+    {
+      "id": "T28",
+      "nome": "Registro de consentimentos",
+      "ok": true
+    },
+    {
+      "id": "T29",
+      "nome": "Canais App e Totem",
+      "ok": true
+    },
+    {
+      "id": "T30",
+      "nome": "Desempenho do carregamento inicial",
+      "ok": true,
+      "detalhe": "14 arquivos, 87 KB, conteúdo pronto em 45 ms"
+    },
+    {
+      "id": "T31",
+      "nome": "Pedido registrado pelo atendente no balcão",
+      "ok": true
+    },
+    {
+      "id": "T32",
+      "nome": "Servidor local bloqueia pastas internas",
+      "ok": true
+    },
+    {
+      "id": "T33",
+      "nome": "Nenhum erro de JavaScript durante os cenários",
+      "ok": true
+    }
+  ]
+}

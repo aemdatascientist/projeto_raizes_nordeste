@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+    Raízes do Nordeste — página única da aplicação
+    Contém a estrutura fixa da interface: cabeçalho com unidade, canal e
+    navegação, aviso de privacidade, área das telas, aviso de inatividade
+    do totem e rodapé. As telas são desenhadas dentro de <main> pelo app.js.
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7b351e">
+    <meta name="description" content="Demonstração de pedidos para retirada da rede Raízes do Nordeste.">
+    <title>Raízes do Nordeste</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dados.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body data-canal="web">
+    <!-- Atalho para quem navega pelo teclado -->
+    <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+    <!-- Cabeçalho: marca, unidade, canal e navegação -->
+    <header>
+        <div class="marca">
+            <img src="imagens/chapeu.svg" alt="">
+            <div>
+                <strong>Raízes do Nordeste</strong>
+                <small>Um pedacinho de casa, pertinho de você.</small>
+            </div>
+        </div>
+        <p class="aviso-demo">Projeto acadêmico · dados fictícios · nenhum pagamento real</p>
+        <div class="controles">
+            <label>Unidade
+                <select id="unidade"></select>
+            </label>
+            <label>Canal
+                <select id="canal">
+                    <option value="web">Web</option>
+                    <option value="app">App (simulação)</option>
+                    <option value="totem">Totem</option>
+                    <option value="balcao">Balcão (simulação)</option>
+                </select>
+            </label>
+        </div>
+        <nav aria-label="Navegação principal" id="navegacao">
+            <button data-tela="cardapio">Cardápio</button>
+            <button data-tela="carrinho">Meu pedido <span id="quantidade">0</span></button>
+            <button data-tela="pedidos">Acompanhar</button>
+            <button data-tela="fidelidade">Fidelidade</button>
+            <button data-tela="conta">Minha conta</button>
+            <button data-tela="operacao">Área da equipe</button>
+        </nav>
+    </header>
+
+    <!-- Cordão de bandeirinhas de São João (só decoração) -->
+    <div class="bandeirinhas" aria-hidden="true"></div>
+
+    <!-- Aviso de privacidade em camadas: primeira camada, sempre visível no primeiro acesso -->
+    <section id="faixa-privacidade" class="faixa-privacidade" aria-label="Aviso de privacidade">
+        <p>
+            <strong>Sua privacidade:</strong> esta demonstração não usa cookies, rastreadores nem envia dados a servidores.
+            Pedimos só o necessário para o pedido e você decide sobre campanhas.
+        </p>
+        <div class="acoes">
+            <button data-tela="privacidade" class="secundario">Ver detalhes</button>
+            <button id="entendi-privacidade">Entendi</button>
+        </div>
+    </section>
+
+    <!-- As telas são desenhadas aqui pelo app.js -->
+    <main id="conteudo" tabindex="-1"></main>
+
+    <!-- Mensagens curtas, anunciadas por leitores de tela -->
+    <div id="mensagem" role="status" aria-live="polite"></div>
+
+    <!-- Totem: aviso antes de limpar a sessão por inatividade -->
+    <div id="aviso-inatividade" class="sobreposicao" role="alertdialog" aria-modal="true" aria-labelledby="titulo-inatividade" hidden>
+        <div class="caixa-aviso">
+            <h2 id="titulo-inatividade">Ainda está por aqui?</h2>
+            <p>Para proteger seus dados, este totem será liberado para o próximo cliente em <strong id="contagem">20</strong> segundos.</p>
+            <button id="continuar-sessao">Continuar meu pedido</button>
+        </div>
+    </div>
+
+    <!-- Serra e mandacarus em silhueta acima do rodapé (só decoração) -->
+    <div class="sertao" aria-hidden="true"></div>
+
+    <footer>
+        <p>Da nossa cozinha para o seu dia.</p>
+        <button data-tela="privacidade">Privacidade e meus dados</button>
+        <button data-tela="guia">Como avaliar esta demonstração</button>
+        <button id="reiniciar">Encerrar sessão e limpar dados</button>    </footer>
+</body>
+</html>

@@ -1,0 +1,848 @@
+/* =====================================================
+   Estilos da interface
+   Contém a identidade visual (cores, cabeçalho, cartões do cardápio,
+   rodapé) e o layout de todas as telas e canais (Web, App e Totem).
+   Mobile-first: as regras base valem para o celular e as
+   media queries do final ampliam o layout em telas maiores.
+   ===================================================== */
+
+/* Paleta inspirada nos cardápios nordestinos: urucum, sol, mandacaru, barro e palha */
+:root {
+    --terra: #7b351e;
+    --escuro: #432819;
+    --creme: #fffaf0;
+    --palha: #f6e9d0;
+    --verde: #286044;
+    --verde-claro: #e5f0e8;
+    --vermelho: #8c2222;
+    --borda: #dacbb7;
+    --amarelo: #f5d580;
+    --urucum: #a3241c;
+    --urucum-escuro: #7d1912;
+    --sol: #f2b632;
+    --barro: #c46a3a;
+    --mandacaru: #2f6b3a;
+}
+
+/* Reset básico - o tamanho inclui borda e espaçamento interno */
+* {
+    box-sizing: border-box;
+}
+
+/* Garante que elementos com o atributo hidden fiquem ocultos */
+[hidden] {
+    display: none !important;
+}
+
+/* Configurações gerais do corpo da página */
+body {
+    margin: 0;
+    color: var(--escuro);
+    background: var(--creme);
+    font: 16px/1.6 Arial, sans-serif;
+}
+
+/* Campos herdam a fonte da página */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Remove o atraso de toque duplo em telas sensíveis ao toque */
+button,
+a,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+/* Botões: área mínima de 44px, recomendada para toque */
+button {
+    padding: 10px 16px;
+    border: 1px solid var(--terra);
+    border-radius: 6px;
+    background: var(--terra);
+    color: white;
+    cursor: pointer;
+    min-height: 44px;
+}
+
+button:hover {
+    filter: brightness(0.92);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Botão de ação secundária */
+.secundario {
+    background: white;
+    color: var(--terra);
+}
+
+/* Foco bem visível para quem navega pelo teclado */
+:focus-visible {
+    outline: 3px solid #226d9a;
+    outline-offset: 3px;
+}
+
+a {
+    color: var(--terra);
+}
+
+/* ---------- Cabeçalho ---------- */
+
+/* Cabeçalho vermelho, como a capa de um cardápio nordestino.
+   O espaçamento lateral centraliza o conteúdo em telas largas */
+header {
+    background: var(--urucum);
+    color: var(--creme);
+    padding: 20px max(16px, calc((100% - 1100px) / 2));
+}
+
+/* Foco amarelo, que aparece bem sobre o vermelho */
+header :focus-visible {
+    outline-color: var(--sol);
+}
+
+.marca {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+/* Chapéu de couro no lugar do logotipo */
+.marca img {
+    width: 76px;
+}
+
+.marca strong {
+    display: block;
+    font: bold 26px Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.marca small {
+    display: block;
+    font: italic 15px Georgia, serif;
+    color: var(--sol);
+}
+
+/* Cordão de bandeirinhas logo abaixo do cabeçalho */
+.bandeirinhas {
+    height: 26px;
+    background: var(--creme) url("imagens/bandeirinhas.svg") repeat-x;
+}
+
+.aviso-demo {
+    font-size: 13px;
+}
+
+/* Seletores de unidade e canal */
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.controles label {
+    flex: 1;
+    min-width: 140px;
+}
+
+/* Navegação principal em "pílulas" que quebram linha no celular */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+nav button {
+    background: transparent;
+    border-color: var(--creme);
+    color: var(--creme);
+}
+
+nav button[aria-current="page"] {
+    background: var(--sol);
+    border-color: var(--sol);
+    color: var(--escuro);
+    font-weight: bold;
+}
+
+/* ---------- Faixa de privacidade (primeira camada do aviso) ---------- */
+
+.faixa-privacidade {
+    background: var(--verde-claro);
+    border-bottom: 1px solid var(--borda);
+    padding: 12px max(16px, calc((100% - 1100px) / 2));
+}
+
+.faixa-privacidade p {
+    margin: 0;
+}
+
+.faixa-privacidade .acoes {
+    margin-top: 10px;
+}
+
+/* ---------- Conteúdo ---------- */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 24px 16px;
+    min-height: 55vh;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+h1,
+h2 {
+    font-family: Georgia, serif;
+}
+
+h1 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 19px;
+}
+
+/* Destaque de boas-vindas do cardápio, com um mandacaru no canto */
+.intro {
+    position: relative;
+    padding: 24px 110px 24px 24px;
+    background: var(--urucum);
+    color: var(--creme);
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.intro::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    width: 70px;
+    height: 110px;
+    background: url("imagens/mandacaru.svg") no-repeat bottom / contain;
+}
+
+.intro h1 {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.intro p {
+    margin: 4px 0 0;
+}
+
+/* Grade de produtos: uma coluna no celular */
+.grade {
+    display: grid;
+    gap: 18px;
+}
+
+/* Painéis brancos */
+.painel,
+.pedido {
+    border: 1px solid var(--borda);
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Cartão do produto no estilo de cardápio impresso:
+   o prato fica à esquerda e o texto à direita */
+.produto {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 8px 16px;
+    align-content: start;
+    padding: 20px;
+    background: var(--urucum);
+    color: var(--creme);
+    border-radius: 10px;
+    border-bottom: 5px solid var(--urucum-escuro);
+}
+
+.produto > * {
+    margin: 0;
+}
+
+/* Desenho do produto dentro de um prato de barro */
+.produto .desenho {
+    grid-row: span 4;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--barro);
+    border: 4px solid var(--escuro);
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+.produto .desenho img {
+    width: 48px;
+    height: 48px;
+}
+
+/* Nome em faixa amarela "colada" e preço ao lado */
+.item-topo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.produto h2 {
+    padding: 2px 10px;
+    background: var(--sol);
+    color: var(--escuro);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transform: rotate(-1.5deg);
+    box-shadow: 3px 3px 0 var(--urucum-escuro);
+}
+
+.preco {
+    color: var(--sol);
+    font: bold 21px Georgia, serif;
+}
+
+/* Etiqueta de disponibilidade do produto */
+.etiqueta {
+    justify-self: start;
+    padding: 2px 9px;
+    border-radius: 4px;
+    background: var(--creme);
+    color: var(--mandacaru);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.etiqueta-indisponivel {
+    background: var(--escuro);
+    color: var(--creme);
+}
+
+.produto button {
+    justify-self: start;
+    background: var(--mandacaru);
+    border-color: var(--mandacaru);
+    font-weight: bold;
+}
+
+/* Botão bloqueado: some no vermelho, sem chamar atenção */
+.produto button:disabled {
+    opacity: 1;
+    background: var(--urucum-escuro);
+    border-color: var(--urucum-escuro);
+    color: #e8c9c4;
+}
+
+/* Movimento da loja: cor muda conforme a fila */
+.movimento {
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 5px solid var(--verde);
+    background: var(--verde-claro);
+}
+
+.movimento-moderado {
+    border-left-color: #b07a00;
+    background: #fdf3d8;
+}
+
+.movimento-intenso {
+    border-left-color: var(--vermelho);
+    background: #f8e4de;
+}
+
+/* Oferta personalizada da campanha "Freguês da casa" */
+.oferta {
+    border: 2px dashed var(--terra);
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+}
+
+.oferta h2 {
+    margin-top: 0;
+}
+
+details summary {
+    cursor: pointer;
+    color: var(--terra);
+    font-weight: bold;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+/* Busca e filtro do cardápio */
+.filtros {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: flex-end;
+}
+
+.filtros label {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* ---------- Formulários ---------- */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+input:not([type=checkbox]),
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9b8972;
+    border-radius: 4px;
+    background: white;
+    color: var(--escuro);
+    min-height: 44px;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+label:has(input[type=checkbox]) {
+    font-weight: normal;
+}
+
+fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+}
+
+.formulario {
+    max-width: 560px;
+}
+
+.dica {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Painel de simulação: deixa claro que não faz parte da tela do cliente */
+.simulador {
+    border: 2px dashed #9b8972;
+    background: #f7f3ec;
+    padding: 4px 14px;
+    margin: 14px 0;
+    border-radius: 6px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 18px 0 0;
+    align-items: center;
+}
+
+/* ---------- Carrinho ---------- */
+
+.linha {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.linha > div:first-child {
+    flex: 1;
+    min-width: 180px;
+}
+
+.linha button {
+    padding: 6px 12px;
+}
+
+.resumo {
+    margin-top: 20px;
+    border-top: 2px solid var(--terra);
+    padding-top: 14px;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ---------- Mensagens ---------- */
+
+.nota {
+    padding: 12px 16px;
+    background: var(--palha);
+    border-left: 4px solid var(--terra);
+}
+
+.nota-erro {
+    border-left-color: var(--vermelho);
+    background: #f8e4de;
+}
+
+.erro {
+    color: var(--vermelho);
+}
+
+.erro:empty {
+    display: none;
+}
+
+.sucesso {
+    color: var(--verde);
+}
+
+/* ---------- Etapas do pagamento e do pedido ---------- */
+
+.etapas-pagamento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+    counter-reset: etapa;
+}
+
+.etapas-pagamento li {
+    flex: 1 1 130px;
+    padding: 8px 10px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    counter-increment: etapa;
+}
+
+.etapas-pagamento li::before {
+    content: counter(etapa) ". ";
+    font-weight: bold;
+}
+
+.etapas-pagamento .feita {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+}
+
+.etapas-pagamento .feita::after {
+    content: " ✓";
+}
+
+.etapas-pagamento .atual {
+    background: #fdf3d8;
+    border-color: #b07a00;
+    font-weight: bold;
+}
+
+.etapas-pagamento .falha {
+    background: #f8e4de;
+    border-color: var(--vermelho);
+    font-weight: bold;
+}
+
+.passos {
+    padding-left: 24px;
+}
+
+.passos li {
+    padding: 7px;
+}
+
+.passos .atual {
+    background: var(--verde-claro);
+    font-weight: bold;
+}
+
+.previsao {
+    font-weight: bold;
+}
+
+/* Etiqueta do canal de origem do pedido */
+.canal {
+    font: normal 13px Arial, sans-serif;
+    background: var(--palha);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 2px 10px;
+    vertical-align: middle;
+}
+
+.pedido {
+    margin-bottom: 16px;
+}
+
+progress {
+    width: 100%;
+    height: 18px;
+    accent-color: var(--verde);
+}
+
+.roteiro li {
+    margin-bottom: 8px;
+}
+
+/* ---------- Tabelas ---------- */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--borda);
+    padding: 10px;
+    text-align: left;
+}
+
+/* Tabelas largas rolam dentro da própria caixa, nunca a página */
+.tabela {
+    overflow-x: auto;
+}
+
+/* No celular, tabelas com letra um pouco menor para caber na tela */
+.tabela table {
+    font-size: 14px;
+}
+
+.tabela th,
+.tabela td {
+    padding: 8px 6px;
+}
+
+/* ---------- Rodapé e mensagens flutuantes ---------- */
+
+/* Serra e mandacarus em silhueta, emendando no rodapé marrom */
+.sertao {
+    height: 60px;
+    margin-top: 30px;
+    background: url("imagens/sertao.svg") repeat-x bottom;
+}
+
+footer {
+    background: var(--escuro);
+    color: var(--creme);
+    padding: 6px 16px 24px;
+    text-align: center;
+}
+
+footer :focus-visible {
+    outline-color: var(--sol);
+}
+
+footer button {
+    background: transparent;
+    border-color: var(--creme);
+    color: var(--creme);
+    margin: 4px;
+}
+
+footer a {
+    display: block;
+    margin-top: 12px;
+    color: var(--sol);
+}
+
+#mensagem {
+    position: fixed;
+    bottom: 18px;
+    left: 16px;
+    right: 16px;
+    max-width: 700px;
+    margin: auto;
+    background: var(--escuro);
+    color: white;
+    border-radius: 6px;
+    padding: 14px;
+    box-shadow: 0 2px 8px #0003;
+    z-index: 10;
+}
+
+#mensagem:empty {
+    display: none;
+}
+
+/* Atalho "Ir para o conteúdo": aparece só ao receber foco */
+.pular {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    z-index: 20;
+}
+
+.pular:focus {
+    top: 10px;
+}
+
+/* Fundo escuro do aviso de inatividade do totem */
+.sobreposicao {
+    position: fixed;
+    inset: 0;
+    background: #000a;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    z-index: 30;
+}
+
+.caixa-aviso {
+    background: white;
+    border-radius: 10px;
+    padding: 28px;
+    max-width: 460px;
+    text-align: center;
+    border-top: 6px solid var(--terra);
+}
+
+/* ---------- Canal Totem: alvos maiores para toque ---------- */
+
+body[data-canal="totem"] button {
+    min-height: 54px;
+    font-size: 18px;
+}
+
+body[data-canal="totem"] main {
+    max-width: 950px;
+}
+
+/* Totem e App são canais do cliente: sem área da equipe */
+body[data-canal="totem"] nav [data-tela="operacao"],
+body[data-canal="app"] nav [data-tela="operacao"] {
+    display: none;
+}
+
+/* ---------- Canal App: menu fixo na parte de baixo, como nos aplicativos ---------- */
+
+body[data-canal="app"] {
+    padding-bottom: 76px;
+}
+
+body[data-canal="app"] nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    gap: 0;
+    flex-wrap: nowrap;
+    background: var(--urucum);
+    border-top: 4px solid var(--sol);
+    z-index: 15;
+}
+
+body[data-canal="app"] nav button {
+    flex: 1;
+    border: 0;
+    border-radius: 0;
+    padding: 8px 2px;
+    font-size: 12px;
+    line-height: 1.2;
+    min-height: 60px;
+}
+
+body[data-canal="app"] #mensagem {
+    bottom: 86px;
+}
+
+/* ---------- Telas maiores ---------- */
+
+/* Tablet: duas colunas */
+@media (min-width: 650px) {
+    .grade {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .colunas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+/* Desktop: três colunas e títulos maiores */
+@media (min-width: 950px) {
+    .grade {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    /* No computador, o App simulado volta a ter menu no topo */
+    body[data-canal="app"] {
+        padding-bottom: 0;
+    }
+
+    body[data-canal="app"] nav {
+        position: static;
+        background: transparent;
+        border: 0;
+        gap: 8px;
+    }
+
+    body[data-canal="app"] nav button {
+        flex: 0 0 auto;
+        border: 1px solid var(--creme);
+        border-radius: 6px;
+        font-size: 16px;
+        padding: 10px 16px;
+        min-height: 44px;
+    }
+
+    body[data-canal="app"] #mensagem {
+        bottom: 18px;
+    }
+}
+
+/* Respeita quem prefere menos movimento na tela */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto;
+    }
+}

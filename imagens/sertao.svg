@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60">
+    <!-- Serra e mandacarus em silhueta, no estilo da xilogravura de cordel -->
+    <g fill="#432819">
+        <path d="M0 60V44Q40 26 80 40Q120 52 160 34Q200 18 240 36Q270 46 300 44V60Z"/>
+        <rect x="58" y="14" width="7" height="34" rx="3"/>
+        <rect x="50" y="22" width="6" height="14" rx="3"/>
+        <rect x="50" y="31" width="12" height="6" rx="3"/>
+        <rect x="67" y="18" width="6" height="14" rx="3"/>
+        <rect x="61" y="27" width="12" height="6" rx="3"/>
+        <rect x="214" y="8" width="8" height="34" rx="4"/>
+        <rect x="205" y="16" width="6" height="15" rx="3"/>
+        <rect x="205" y="26" width="13" height="6" rx="3"/>
+        <rect x="225" y="13" width="6" height="15" rx="3"/>
+        <rect x="218" y="22" width="13" height="6" rx="3"/>
+    </g>
+</svg>

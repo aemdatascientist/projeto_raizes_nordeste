@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 100">
+    <!-- Mandacaru: tronco e dois braços feitos com retângulos arredondados -->
+    <g fill="#2f6b3a" stroke="#1d4426" stroke-width="2">
+        <rect x="24" y="8" width="13" height="92" rx="6"/>
+        <rect x="6" y="28" width="11" height="34" rx="5"/>
+        <rect x="6" y="52" width="24" height="11" rx="5"/>
+        <rect x="44" y="18" width="11" height="38" rx="5"/>
+        <rect x="31" y="46" width="24" height="11" rx="5"/>
+    </g>
+    <!-- Espinhos -->
+    <g stroke="#f2b632" stroke-width="1.5">
+        <path d="M30 20v4M30 40v4M30 62v4M30 82v4M11 36v4M49 28v4"/>
+    </g>
+</svg>

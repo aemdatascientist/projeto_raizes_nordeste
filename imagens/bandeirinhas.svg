@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 26" width="120" height="26">
+    <!-- Bandeirinhas de São João: um cordão com quatro cores que se repete -->
+    <path d="M0 3 Q30 7 60 3 Q90 7 120 3" fill="none" stroke="#4a2414" stroke-width="1.5"/>
+    <polygon points="3,4 27,5 15,24" fill="#f2b632"/>
+    <polygon points="33,5 57,4 45,24" fill="#2f6b3a"/>
+    <polygon points="63,4 87,5 75,24" fill="#e0782b"/>
+    <polygon points="93,5 117,4 105,24" fill="#a3241c"/>
+</svg>
